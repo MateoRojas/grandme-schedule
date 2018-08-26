@@ -26,7 +26,12 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.5.Final'
+
 	runtime('mysql:mysql-connector-java')
+
 	compileOnly('org.projectlombok:lombok')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
