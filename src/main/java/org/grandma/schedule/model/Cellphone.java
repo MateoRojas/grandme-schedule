@@ -32,6 +32,8 @@ public class Cellphone {
 
     private Integer number;
 
+    private Boolean whatsapp;
+
     private Boolean state;
 
     // Relations

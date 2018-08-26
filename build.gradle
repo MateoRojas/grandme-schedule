@@ -26,6 +26,8 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+	compile("org.springframework:spring-web")
+	compile("com.fasterxml.jackson.core:jackson-databind")
 
 	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.5.Final'
 
@@ -34,4 +36,6 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.11.0'
+
 }
