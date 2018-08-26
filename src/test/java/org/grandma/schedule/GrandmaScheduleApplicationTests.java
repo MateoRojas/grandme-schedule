@@ -1,4 +1,4 @@
-package org.grandma.grandmaschedule;
+package org.grandma.schedule;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
