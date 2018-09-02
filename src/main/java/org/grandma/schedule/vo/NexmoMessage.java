@@ -13,6 +13,8 @@ import org.springframework.util.MultiValueMap;
 @AllArgsConstructor
 public class NexmoMessage {
 
+    private static final String COUNTRY_CODE = "593";
+
     private static final String FROM = "from";
 
     private static final String TO = "to";
@@ -44,7 +46,7 @@ public class NexmoMessage {
 
         map.add(FROM, NexmoMessage.FROM_NAME);
         map.add(TEXT, this.message.getText());
-        map.add(TO, this.message.getTo());
+        map.add(TO, COUNTRY_CODE + this.message.getTo().substring(1));
         map.add(API_KEY, this.key);
         map.add(API_SECRET, this.secret);
 

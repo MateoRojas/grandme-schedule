@@ -40,6 +40,6 @@ public class NexmoMessageTest {
 
         return new SmsMessage()
                 .setText("Hello World!")
-                .setTo("593988817485");
+                .setTo("0988817485");
     }
 }
