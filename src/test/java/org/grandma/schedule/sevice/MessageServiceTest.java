@@ -75,7 +75,7 @@ public class MessageServiceTest {
 
         this.peopleMessages = Arrays.asList(personMessageOne(), personMessageSecond());
 
-        when(calendarRepository.fetchPeopleToSendMessageByDate(any(LocalDate.class)))
+        when(calendarRepository.findByDate(any(LocalDate.class)))
             .thenReturn(peopleMessages);
 
         when(templateService.getMessages(anyCollection()))
@@ -87,7 +87,7 @@ public class MessageServiceTest {
 
         messageService.sendDailyMessage(date);
 
-        verify(calendarRepository).fetchPeopleToSendMessageByDate(date);
+        verify(calendarRepository).findByDate(date);
     }
 
     @Test

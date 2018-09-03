@@ -23,7 +23,7 @@ public class MessageService {
 
         smsMessageConsumer.sendMessages(
             templateService.getMessages(
-                calendarRepository.fetchPeopleToSendMessageByDate(
+                calendarRepository.findByDate(
                     date
                 )
             )

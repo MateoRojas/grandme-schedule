@@ -1,16 +1,13 @@
 package org.grandma.schedule.repository;
 
+import org.grandma.schedule.model.Calendar;
 import org.grandma.schedule.vo.PersonMessage;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDate;
 import java.util.Collection;
 
-@Repository
-public class CalendarRepository {
+public interface CalendarRepository extends CrudRepository<Calendar, Integer> {
 
-    public Collection<PersonMessage> fetchPeopleToSendMessageByDate(LocalDate date) {
-
-        return null;
-    }
+    Collection<PersonMessage> findByDate(LocalDate date);
 }

@@ -40,6 +40,6 @@ public class Catalog {
     // Relations
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
+    @JoinColumn(name = "id_category")
     private Category category;
 }
