@@ -1,6 +1,5 @@
-package org.grandma.schedule.vo;
+package org.grandma.schedule.model;
 
-import org.grandma.schedule.consumer.SmsMessageConsumer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;

@@ -1,8 +1,8 @@
 package org.grandma.schedule.sevice;
 
-import org.grandma.schedule.vo.CellphoneMessage;
-import org.grandma.schedule.vo.PersonMessage;
-import org.grandma.schedule.vo.SmsMessage;
+import org.grandma.schedule.model.CellphoneMessage;
+import org.grandma.schedule.model.PersonMessage;
+import org.grandma.schedule.model.SmsMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

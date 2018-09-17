@@ -1,4 +1,4 @@
-package org.grandma.schedule.model;
+package org.grandma.schedule.dto;
 
 import lombok.Data;
 
@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * @author mateo
@@ -14,16 +16,18 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
-public class Category {
+public class Catalog {
 
     // Id
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCategory")
+    @Column(name = "idCatalog")
     private Integer id;
 
     // Attributes
+
+    private Integer idCategory;
 
     private String abbreviation;
 
@@ -32,4 +36,10 @@ public class Category {
     private String description;
 
     private Boolean state;
+
+    // Relations
+
+    @ManyToOne
+    @JoinColumn(name = "id_category")
+    private Category category;
 }

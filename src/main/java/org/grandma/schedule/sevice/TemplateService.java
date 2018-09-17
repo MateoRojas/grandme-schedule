@@ -1,7 +1,7 @@
 package org.grandma.schedule.sevice;
 
-import org.grandma.schedule.vo.PersonMessage;
-import org.grandma.schedule.vo.SmsMessage;
+import org.grandma.schedule.model.PersonMessage;
+import org.grandma.schedule.model.SmsMessage;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

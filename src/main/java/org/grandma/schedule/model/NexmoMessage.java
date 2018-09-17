@@ -1,4 +1,4 @@
-package org.grandma.schedule.vo;
+package org.grandma.schedule.model;
 
 import lombok.AllArgsConstructor;
 import org.springframework.util.LinkedMultiValueMap;

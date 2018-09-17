@@ -1,4 +1,4 @@
-package org.grandma.schedule.model;
+package org.grandma.schedule.dto;
 
 import lombok.Data;
 

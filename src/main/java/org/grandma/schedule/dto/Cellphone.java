@@ -1,4 +1,4 @@
-package org.grandma.schedule.model;
+package org.grandma.schedule.dto;
 
 import lombok.Data;
 
@@ -30,7 +30,7 @@ public class Cellphone {
 
     private Integer idPerson;
 
-    private Integer number;
+    private String number;
 
     private Boolean whatsapp;
 

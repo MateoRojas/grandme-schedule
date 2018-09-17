@@ -1,8 +1,8 @@
 package org.grandma.schedule.consumer;
 
 
-import org.grandma.schedule.vo.NexmoMessage;
-import org.grandma.schedule.vo.SmsMessage;
+import org.grandma.schedule.model.NexmoMessage;
+import org.grandma.schedule.model.SmsMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

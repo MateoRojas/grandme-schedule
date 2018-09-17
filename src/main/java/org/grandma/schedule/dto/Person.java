@@ -1,12 +1,9 @@
-package org.grandma.schedule.model;
+package org.grandma.schedule.dto;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * @author mateo
@@ -36,4 +33,9 @@ public class Person {
     private String identificaction;
 
     private Boolean state;
+
+    // Relations
+
+    @OneToMany(mappedBy = "person", fetch =  FetchType.LAZY)
+    private Collection<Cellphone> cellphones;
 }

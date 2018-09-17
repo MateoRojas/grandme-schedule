@@ -1,4 +1,4 @@
-package org.grandma.schedule.vo;
+package org.grandma.schedule.model;
 
 import org.junit.Before;
 import org.junit.Test;
