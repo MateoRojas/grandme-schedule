@@ -1,5 +1,6 @@
 package org.grandma.schedule;
 
+import com.querydsl.jpa.hibernate.HibernateQueryFactory;
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +23,12 @@ public class GrandmaScheduleApplication {
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+
+    @Bean
+    public HibernateQueryFactory queryFactory(LocalSessionFactoryBean sessionFactory) {
+
+        return new HibernateQueryFactory(() -> sessionFactory.getObject().getCurrentSession());
     }
 
     @Bean
