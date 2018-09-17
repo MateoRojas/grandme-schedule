@@ -30,7 +30,6 @@ repositories {
 
 idea {
     module {
-        // Marks the already(!) added srcDir as "generated"
         generatedSourceDirs += file('src/querydsl/java')
     }
 }
@@ -59,5 +58,3 @@ querydsl {
     jpa = true
     querydslDefault = true
 }
-
-//sourceSets.main.java.srcDir file("$buildDir/querydsl")
