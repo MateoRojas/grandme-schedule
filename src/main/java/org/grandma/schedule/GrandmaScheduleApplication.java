@@ -29,7 +29,7 @@ public class GrandmaScheduleApplication {
 
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan(new String[] {"org.grandma.schedule.model"});
+        sessionFactory.setPackagesToScan("org.grandma.schedule.model");
         sessionFactory.setHibernateProperties(new Properties(){
             {
                 setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
