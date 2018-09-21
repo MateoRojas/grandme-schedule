@@ -39,6 +39,6 @@ public class Cellphone {
     // Relations
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_person")
+    @JoinColumn(name = "idPerson", insertable = false, updatable = false, referencedColumnName = "idPerson")
     private Person person;
 }

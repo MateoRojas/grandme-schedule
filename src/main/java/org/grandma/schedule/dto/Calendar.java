@@ -40,10 +40,10 @@ public class Calendar {
     // Relations
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_person")
+    @JoinColumn(name = "idPerson", insertable = false, updatable = false, referencedColumnName = "idPerson")
     private Person person;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_mode")
+    @JoinColumn(name = "idMode", insertable = false, updatable = false, referencedColumnName = "idCatalog")
     private Catalog mode;
 }

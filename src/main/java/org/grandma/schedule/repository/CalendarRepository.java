@@ -3,6 +3,7 @@ package org.grandma.schedule.repository;
 import com.querydsl.core.group.GroupBy;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.hibernate.HibernateQueryFactory;
+import org.grandma.schedule.dto.Calendar;
 import org.grandma.schedule.dto.QCalendar;
 import org.grandma.schedule.dto.QCellphone;
 import org.grandma.schedule.dto.QPerson;
@@ -54,6 +55,6 @@ public class CalendarRepository {
                         ).as(qPersonMessage.cellphones.getMetadata().getName())
                     )
                 )
-        );
+            );
     }
 }
