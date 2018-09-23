@@ -1,6 +1,7 @@
 package org.grandma.schedule.dto;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import javax.persistence.ManyToOne;
  */
 @Data
 @Entity
+@Accessors(chain = true)
 public class Cellphone {
 
     // Id

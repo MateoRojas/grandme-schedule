@@ -1,6 +1,7 @@
 package org.grandma.schedule.dto;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ import java.time.LocalDate;
  */
 @Data
 @Entity
+@Accessors(chain = true)
 public class Calendar {
 
     // Id
