@@ -11,6 +11,8 @@ import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +26,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {PersistanceConfig.class, CalendarRepository.class})
 @Transactional
-public class CalendarRepositoryTest {
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
+public class CalendarRepositoryInteg {
 
     private Faker faker = new Faker();
 
@@ -35,7 +38,7 @@ public class CalendarRepositoryTest {
     private CalendarRepository calendarRepository;
 
     @Test
-    public void test() {
+    public void givenThereAreTwoPeopleAssignedTodayWhenFindByDateThenCorrectPersonMessages() {
 
         LocalDate date = LocalDate.now();
         Boolean state = Boolean.TRUE;
@@ -116,7 +119,7 @@ public class CalendarRepositoryTest {
         sessionFactory.getCurrentSession().save(calendarMateo);
         sessionFactory.getCurrentSession().save(calendarSilvia);
 
-        Collection<PersonMessage> result = calendarRepository.findByDate(date);
+        Collection<PersonMessage> result = calendarRepository.findPersonMessageByDate(date);
         
         assertThat(result)
             .contains(personMessageMateo, personMessageSilvia);

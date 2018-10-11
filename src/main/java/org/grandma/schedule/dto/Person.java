@@ -46,6 +46,20 @@ public class Person {
 
     // Relations
 
-    @OneToMany(mappedBy = "person", fetch =  FetchType.LAZY)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<Cellphone> cellphones;
+
+    public Person() {
+    }
+
+    public Person(Integer id, Integer idGender, String firstName, String secondName, String fatherLastName, String motherLastName, String identification, Boolean state) {
+        this.id = id;
+        this.idGender = idGender;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.fatherLastName = fatherLastName;
+        this.motherLastName = motherLastName;
+        this.identification = identification;
+        this.state = state;
+    }
 }

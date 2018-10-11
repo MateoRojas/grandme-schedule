@@ -3,6 +3,7 @@ package org.grandma.schedule.consumer;
 import org.grandma.schedule.model.NexmoMessage;
 import org.grandma.schedule.model.SmsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -18,7 +19,8 @@ public class SmsMessageConsumer {
 
     public static final String NEXMO_API_SECRET = "4FuqPoDpcU28gAgB";
 
-    private static final String NEXMO_API_URL = "https://rest.nexmo.com/sms/json";
+    @Autowired
+    private Environment environment;
 
     @Autowired
     private CommonRestConsumer commonRestConsumer;
@@ -34,7 +36,8 @@ public class SmsMessageConsumer {
             .stream()
             .map(message -> new NexmoMessage(NEXMO_API_KEY, NEXMO_API_SECRET, message).valueMap())
             .forEach(message ->
-                this.commonRestConsumer.postFormUrlEncoded(NEXMO_API_URL, message, String.class)
+                this.commonRestConsumer.postFormUrlEncoded(
+                        environment.getProperty("org.grandma.nexmo.api.url"), message, String.class)
             );
     }
 }

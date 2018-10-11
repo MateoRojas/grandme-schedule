@@ -22,7 +22,7 @@ public class CalendarRepository {
     @Autowired
     private HibernateQueryFactory query;
 
-    public Collection<PersonMessage> findByDate(LocalDate date) {
+    public Collection<PersonMessage> findPersonMessageByDate(LocalDate date) {
 
         QCalendar qCalendar = QCalendar.calendar;
         QPerson qPerson = QPerson.person;

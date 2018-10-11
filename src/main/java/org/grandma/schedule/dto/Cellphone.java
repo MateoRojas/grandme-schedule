@@ -43,4 +43,15 @@ public class Cellphone {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idPerson", insertable = false, updatable = false, referencedColumnName = "idPerson")
     private Person person;
+
+    public Cellphone() {
+    }
+
+    public Cellphone(Integer id, Integer idPerson, String number, Boolean whatsapp, Boolean state) {
+        this.id = id;
+        this.idPerson = idPerson;
+        this.number = number;
+        this.whatsapp = whatsapp;
+        this.state = state;
+    }
 }
