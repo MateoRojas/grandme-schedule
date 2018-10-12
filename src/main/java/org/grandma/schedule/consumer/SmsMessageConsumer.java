@@ -1,5 +1,6 @@
 package org.grandma.schedule.consumer;
 
+import lombok.extern.log4j.Log4j2;
 import org.grandma.schedule.model.NexmoMessage;
 import org.grandma.schedule.model.SmsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.Collection;
  * @author mateo
  * @since 1.0.0
  */
+@Log4j2
 @Component
 public class SmsMessageConsumer {
 
@@ -34,6 +36,7 @@ public class SmsMessageConsumer {
 
         messages
             .stream()
+            .peek(message -> log.info("Sending message to {}", message.getTo()))
             .map(message -> new NexmoMessage(NEXMO_API_KEY, NEXMO_API_SECRET, message).valueMap())
             .forEach(message ->
                 this.commonRestConsumer.postFormUrlEncoded(
